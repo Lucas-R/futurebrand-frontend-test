@@ -1,0 +1,17 @@
+.my-button {
+  border: 0;
+  outline: 0;
+  padding: 0 1rem;
+  min-height: 2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.my-button:hover {
+  filter: brightness(90%);
+}
+
+.my-button[:disabled] {
+  opacity: 0.5;
+}

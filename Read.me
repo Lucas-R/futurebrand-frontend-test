@@ -1,0 +1,26 @@
+// 1. [ x ] fazer um fetch da api https://jsonplaceholder.typicode.com/todos
+// 2. [ x ] não usar axios ou qualquer outra lib, usar diretamente o fetch
+// 3. [ x ] pegar o resultado e mostrar na pagina:
+//    - [ x ] ID e Título
+//    - [ x ] com flexbox deixar o ID a esquerda e os títulos a direita
+// 4. [ x ] fazer uma filtragem: exibir apenas títulos com a primeira letra S
+// 5. [ x ] adicionar um background cinza nas linhas pares com JS
+// 6. [ x ] implementar paginação, botão de próximo e anterior, de 2 em 2
+
+Meu resultado:
+1 - Para o fatch preferi criar um hook pensando como uma aplicação que possa utilizar esse hook 
+apenas mudando o endpoint usando "https://jsonplaceholder.typicode.com/" como url base;
+
+4 - No Resultado do fetch usei o filter para varificar qual titulo começa com S utilizando .charAt()
+como sugerido no proprio live code e .toLowerCase() para ter certeza que não falara na condição de title.charAt() === "s";
+
+5 - utilizei o proprio index do .map que fiz no resultado  que apresento em tela para verificar se é par (index%2 === 0)
+e adicionando uma class "todo-even" com bg cinza;
+
+6 - no hook pode enviar o limit por pagina onde ele calcula a quantidade de paginas serão necessarias baseado na quantidade 
+retornada do fetch;
+
+    totalPages = Math.ceil(fetch.length / limit)
+
+se caso fetch.length for menor que limit ele mostra todos itens e 1 pagina de 1 ( 1 de 1) e os botões desativam
+tiver na ultima ou primeira pagina;
